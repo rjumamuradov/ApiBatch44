@@ -1,13 +1,15 @@
 package get_http_request;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
 public class GetRequest03 {
     @Test
-    public void test3(){
+    public void test3() {
 
         //    https://restful-booker.herokuapp.com/booking/7 url'ine
         //GET request'i yolladigimda
@@ -20,9 +22,12 @@ public class GetRequest03 {
         //ve checkout date'in 2020-09-30 oldugunu test edin
         //
 
-        String url="https://restful-booker.herokuapp.com/booking/7";
+        String url = "https://restful-booker.herokuapp.com/booking/7";
         Response response = given().when().get(url);
         response.prettyPrint();
+        response.then().contentType("application/json").statusCode(200);
+        response.then().contentType(ContentType.JSON).statusCode(200);
+
 
     }
 }
