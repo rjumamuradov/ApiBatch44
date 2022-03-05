@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class GetRequest02 {
 
     @Test
-    public void test02(){
+    public void test02() {
 
         String url = "https://reqres.in/api/users";
 
@@ -23,7 +23,9 @@ public class GetRequest02 {
         //response.then().log().all();      response daki her şeyi getirir
 
         //Headers
-        response.then().assertThat()
+        response
+                .then()
+                .assertThat()
                 .statusCode(200)
                 .contentType("application/json; charset=utf-8")
                 .statusLine("HTTP/1.1 200 OK");

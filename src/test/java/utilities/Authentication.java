@@ -19,7 +19,7 @@ public class Authentication {
         map.put("Batch44+",password);
         String endPoint = "http://www.gmibank.com/api/authenticate";
         Response response = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
-        JSON
+
         return null;
     }
 }
