@@ -1,7 +1,7 @@
-package get_http_request;
+package get_http_request.day04;
 
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
+
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -40,6 +40,14 @@ public class GetRequest02 {
                 , "data[1].first_name", equalTo("Janet")
                 , "data[1].last_name", equalTo("Weaver")
                 , "data[1].avatar", equalTo("https://reqres.in/img/faces/2-image.jpg"));
+
+            response
+                    .then()
+                    .body("data[4].id",equalTo(5)
+                            ,"data[4].email",equalTo("charles.morris@reqres.in")
+                            ,"date[4].first.name",equalTo("Charles")
+                            , "data[4].last_name", equalTo("Morris")
+                            , "data[4].avatar", equalTo("https://reqres.in/img/faces/5-image.jpg"));
 
 
     }
